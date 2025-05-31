@@ -1,0 +1,592 @@
+/* Sección principal (hero) */
+.hero-section {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  overflow: hidden;
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 5%;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-text.left-aligned {
+  text-align: left;
+  max-width: 600px;
+  padding: 2rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Fondo semitransparente para mejor legibilidad */
+  border-radius: 8px;
+}
+
+.hero-text h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  color: #fff;
+  line-height: 1.2;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  color: #fff;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+/* Estilos para el video de fondo (se mantienen igual) */
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.background-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Sección de cards */
+.cards-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 100px 50px 100px 50px;
+}
+
+.card {
+  background: white;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card h3 {
+  margin: 20px 10px 10px;
+  font-size: 25px;
+}
+
+.card p {
+  font-size: 18px;
+  color: #666;
+  padding: 0 15px 20px;
+}
+
+.btn-primary {
+  background-color: #0072c8;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.btn-secondary {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.btn-primary:hover,
+.btn-secondary:hover {
+  opacity: 0.8;
+}
+
+/* Sección de Soluciones de Carga con imagen de fondo */
+.charging-section {
+  position: relative;
+  padding: 100px 20px;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+}
+
+.charging-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.charging-section .section-container {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.charging-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.charging-section .section-description {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+/* Sección de Extras Digitales */
+.digital-section {
+  padding: 80px 20px;
+  background-color: #fff;
+}
+
+.digital-section h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 50px;
+  color: #333;
+}
+
+.digital-feature {
+  max-width: 800px;
+  margin: 0 auto 40px;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.digital-feature h3 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #0072c8;
+}
+
+.digital-feature p {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+/* Ajustes responsive */
+@media (max-width: 768px) {
+  .charging-section,
+  .digital-section {
+    padding: 60px 15px;
+  }
+
+  .charging-section h2,
+  .digital-section h2 {
+    font-size: 2rem;
+  }
+
+  .digital-feature {
+    padding: 20px;
+  }
+}
+
+/* Slider de Extras Digitales*/
+
+/* Texto principal del slider */
+.slider-text h2 {
+  font-size: 2.8rem;
+  /* Aumentado de 2.2rem */
+  margin-bottom: 30px;
+  /* Aumentado de 25px */
+  color: #1a1a1a;
+  font-weight: 700;
+  /* Más negrita */
+  letter-spacing: -0.5px;
+  /* Mejor legibilidad */
+  line-height: 1.2;
+}
+
+/* Subtítulos (Extras Digitales, Zentauri Connect, etc.) */
+.slider-text h3 {
+  font-size: 2.2rem;
+  /* Aumentado de 1.8rem */
+  margin: 35px 0 25px;
+  /* Aumentado de 30px 0 20px */
+  color: #0072c8;
+  font-weight: 600;
+  /* Más negrita */
+}
+
+/* Párrafos descriptivos */
+.slider-text p {
+  font-size: 1.3rem;
+  /* Aumentado de 1.15rem */
+  color: #4d4d4d;
+  margin-bottom: 40px;
+  /* Aumentado de 35px */
+  line-height: 1.8;
+  /* Más espacio entre líneas */
+  max-width: 85%;
+}
+
+/* Botón Más información */
+.btn-primary {
+  font-size: 1.1rem; /* Tamaño aumentado */
+  padding: 12px 28px; /* Más grande */
+  font-weight: 600;
+}
+
+.digital-slider-section {
+  padding: 100px 0;
+  background-color: #f5f7fa;
+  position: relative;
+  overflow: hidden;
+}
+
+.slider-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  padding: 0 30px;
+}
+
+.slider-content {
+  display: flex;
+  align-items: center;
+  position: relative;
+  min-height: 500px;
+  /* Altura mínima para evitar saltos */
+}
+
+/* Animaciones para el texto */
+.slider-text {
+  flex: 1;
+  padding-right: 60px;
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: slideInText 0.8s forwards 0.3s;
+}
+
+@keyframes slideInText {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Animaciones para la imagen */
+.slider-image {
+  flex: 1;
+  height: 450px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+  opacity: 0;
+  transform: translateX(20px) rotateY(10deg);
+  animation: slideInImage 0.8s forwards 0.3s;
+}
+
+@keyframes slideInImage {
+  to {
+    opacity: 1;
+    transform: translateX(0) rotateY(10deg);
+  }
+}
+
+/* Transiciones entre slides */
+.slide-transition {
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.slide-exit {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.slide-exit-active {
+  opacity: 0;
+  transform: translateX(-30px);
+}
+
+.slide-enter {
+  opacity: 0;
+  transform: translateX(30px);
+}
+
+.slide-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Efectos hover mejorados */
+.slider-image:hover {
+  transform: perspective(1500px) rotateY(5deg) scale(1.02);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+}
+
+.slider-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.slider-image:hover img {
+  transform: scale(1.05);
+}
+
+/* Controles con animación */
+.slider-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+  position: relative;
+}
+
+.slider-arrow {
+  background: #fff;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #0072c8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  z-index: 2;
+}
+
+.slider-arrow:hover {
+  background: #0072c8;
+  color: #fff;
+  transform: translateY(-3px) scale(1.1);
+  box-shadow: 0 10px 25px rgba(0, 114, 200, 0.4);
+}
+
+/* Puntos de navegación animados */
+.slider-dots {
+  display: flex;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #e0e0e0;
+  margin: 0 8px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  position: relative;
+  transform: scale(0.9);
+}
+
+.dot::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  right: -6px;
+  bottom: -6px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  background: #0072c8;
+  transform: scale(1.2);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 114, 200, 0.4);
+  }
+
+  70% {
+    box-shadow: 0 0 0 10px rgba(0, 114, 200, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 114, 200, 0);
+  }
+}
+
+.dot.active::before {
+  border-color: rgba(0, 114, 200, 0.3);
+}
+
+.dot:hover {
+  transform: scale(1.1);
+}
+
+/* Barra de progreso para autoplay */
+.dot-progress {
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  height: 2px;
+  background: #0072c8;
+  animation: progress 5s linear;
+}
+
+@keyframes progress {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .slider-text {
+    padding-right: 40px;
+  }
+
+  .slider-image {
+    height: 380px;
+  }
+}
+
+@media (max-width: 768px) {
+  .digital-slider-section {
+    padding: 70px 0;
+  }
+
+  .slider-content {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .slider-text {
+    padding-right: 0;
+    margin-bottom: 40px;
+    text-align: center;
+    animation: slideInUp 0.8s forwards 0.3s;
+  }
+
+  @keyframes slideInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .slider-image {
+    width: 100%;
+    height: 300px;
+    animation: slideInUp 0.8s forwards 0.3s;
+  }
+
+  .slider-controls {
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 576px) {
+  .slider-container {
+    padding: 0 15px;
+  }
+
+  .slider-text h2 {
+    font-size: 1.8rem;
+  }
+
+  .slider-image {
+    height: 250px;
+  }
+
+  .slider-arrow {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* Ajustes responsive para los nuevos tamaños */
+@media (max-width: 992px) {
+  .slider-text h2 {
+    font-size: 2.5rem;
+  }
+
+  .slider-text h3 {
+    font-size: 2rem;
+  }
+
+  .slider-text p {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .slider-text h2 {
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+  }
+
+  .slider-text h3 {
+    font-size: 1.8rem;
+    margin: 30px 0 20px;
+  }
+
+  .slider-text p {
+    font-size: 1.15rem;
+    margin-bottom: 35px;
+    line-height: 1.7;
+  }
+
+  .btn-primary {
+    font-size: 1rem;
+    padding: 10px 24px;
+  }
+}
+
+@media (max-width: 576px) {
+  .slider-text h2 {
+    font-size: 2rem;
+  }
+
+  .slider-text h3 {
+    font-size: 1.6rem;
+  }
+
+  .slider-text p {
+    font-size: 1.1rem;
+  }
+}

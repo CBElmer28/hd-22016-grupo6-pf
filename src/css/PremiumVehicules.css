@@ -1,0 +1,125 @@
+/* Contenedor principal */
+.premium-vehicles-container {
+  font-family: 'Arial', sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Títulos */
+.premium-vehicles-container h1 {
+  color: #000;
+  font-size: 28px;
+  margin-bottom: 1.5rem;
+  font-weight: normal;
+}
+
+.premium-vehicles-container h2 {
+  color: #000;
+  font-size: 22px;
+  margin-bottom: 1.25rem;
+  font-weight: normal;
+}
+
+/* Listas */
+.features-list {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 1.5rem;
+}
+
+.features-list > li {
+  position: relative;
+  padding-left: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.features-list > li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #006db7;
+  font-weight: bold;
+}
+
+.sublist {
+  list-style-type: '- ';
+  padding-left: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.sublist li {
+  padding-left: 0.5rem;
+}
+
+/* Enlaces */
+.info-link a {
+  color: #006db7;
+  text-decoration: none;
+}
+
+.info-link a:hover {
+  text-decoration: underline;
+}
+
+/* Divisor */
+.divider {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 2rem 0;
+}
+
+/* Tabla */
+.models-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+}
+
+.models-table th,
+.models-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.models-table th {
+  font-weight: normal;
+  color: #666;
+}
+
+/* Badges */
+.certification-badges {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 1.5rem 0;
+}
+
+.badge-item {
+  color: #006db7;
+  font-size: 14px;
+}
+
+/* Texto final */
+.sat-vehicle {
+  margin-top: 1.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .premium-vehicles-container {
+    padding: 1rem;
+  }
+
+  .models-table {
+    font-size: 0.9rem;
+  }
+
+  .models-table th,
+  .models-table td {
+    padding: 8px 10px;
+  }
+}

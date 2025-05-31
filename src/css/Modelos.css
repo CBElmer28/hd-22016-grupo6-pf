@@ -1,0 +1,292 @@
+.modelos-container {
+  padding: 2rem;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9fb;
+  color: #222;
+  padding-top: 100px;
+}
+
+.titulo {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.subtitulo:hover,
+.titulo:hover {
+  color: #00c9ff;
+  transform: scale(1.02);
+  transition: all 0.3s ease;
+}
+
+.descripcion {
+  color: #666;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.botones-marcas {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.botones-marcas button {
+  padding: 0.6rem 1.4rem;
+  background: linear-gradient(145deg, #ffffff, #e6e6e6);
+  border: none;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.botones-marcas button:hover {
+  background: #000;
+  color: #fff;
+}
+
+.subtitulo {
+  font-size: 2.2rem;
+  margin: 2rem 0 1rem;
+  font-weight: 600;
+}
+
+.modelos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 1rem;
+  padding: 1rem;
+}
+
+.modelo-card {
+  position: relative;
+  background: #fff;
+  border: none;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: aparecer 1.5s ease forwards;
+}
+.modelo-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.modelo-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.modelo-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.modelo-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.modelo-card:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.modelo-card:nth-child(6) {
+  animation-delay: 0.6s;
+}
+.modelo-card:nth-child(7) {
+  animation-delay: 0.7s;
+}
+.modelo-card:nth-child(8) {
+  animation-delay: 0.8s;
+}
+.modelo-card:nth-child(9) {
+  animation-delay: 0.9s;
+}
+
+@keyframes aparecer {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modelo-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+}
+
+.modelo-imagen {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+  transition: filter 0.3s ease;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease;
+}
+.modelo-card:hover .modelo-imagen {
+  filter: brightness(0.5);
+  transform: scale(1.05);
+}
+
+.modelo-card:hover .overlay {
+  opacity: 1;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.modelo-card:hover .overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.overlay button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  background: linear-gradient(135deg, #00c9ff, #92fe9d);
+  color: #000;
+  border: none;
+  border-radius: 50px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.overlay button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.modelo-card h3 {
+  margin: 1rem 0 0.5rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.etiquetas {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.etiqueta {
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease-in-out;
+}
+
+.etiqueta.nuevo {
+  background: #007bff;
+  color: #fff;
+}
+
+.etiqueta.eléctrico {
+  background: #00e0ff;
+  color: #000;
+}
+
+.etiqueta.híbrido {
+  background: #b5ff00;
+  color: #000;
+}
+
+.etiqueta:hover {
+  filter: brightness(1.1);
+  transform: scale(1.05);
+}
+
+.precio {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  color: #000;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+}
+
+.filtros {
+  display: flex;
+  justify-content: flex-start;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+  padding-left: 2rem;
+  align-items: center;
+}
+
+.filtros select {
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  background-color: #fff;
+  cursor: pointer;
+  transition: border-color 0.3s;
+}
+
+.filtros select:hover {
+  border-color: #000;
+}
+
+.filtro-grupo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.filtro-grupo span {
+  font-weight: bold;
+  color: #333;
+}
+
+.filtro-grupo button {
+  padding: 0.5rem 1.25rem;
+  background: #f4f4f4;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: all 0.25s ease-in-out;
+}
+
+.filtro-grupo button:hover {
+  background: #ddd;
+}
+
+.filtro-grupo .filtro-activo {
+  background: #000;
+  color: #fff;
+  border-color: #000;
+}
+
+.overlay button:active {
+  transform: scale(0.95);
+}
