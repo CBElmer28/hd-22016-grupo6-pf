@@ -15,7 +15,7 @@ const MercedesSearchForm = () => {
           className="mb-4 border-0 p-0 overflow-hidden"
           style={{ height: '700px', position: 'relative', left: '-17.5rem', width: '100vw' }}
         >
-          {/* Imagen de fondo */}
+          {/* Imagen de fondooooo */}
           <Image
             src={modelocompra}
             alt="Vehículo premium de ocasión"
