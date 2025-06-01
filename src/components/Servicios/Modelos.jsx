@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Navbar from '../General/Navbar';
 import Footer from '../General/Footer';
-import '../../css/Modelos.css';
 import ClaseABerlina from '../../assets/modelos/ClaseABerlina.avif';
 import CLARojo from '../../assets/modelos/CLARojo.avif';
 import CLAVerde from '../../assets/modelos/CLAVerde.avif';
@@ -31,7 +30,7 @@ const modelos = [
   {
     nombre: 'Clase A Berlina',
     etiquetas: ['Híbrido'],
-    imagen: ClaseABerlina, // sin comillas
+    imagen: ClaseABerlina,
     precio: '39.904,57 €',
     disponible: true,
     categoria: 'Berlina',
@@ -39,7 +38,7 @@ const modelos = [
   {
     nombre: 'CLA',
     etiquetas: ['Nuevo', 'Eléctrico'],
-    imagen: CLARojo, // sin comillas
+    imagen: CLARojo,
     precio: 'Disponible próximamente',
     disponible: false,
     categoria: 'Berlina',
@@ -175,7 +174,7 @@ const modelos = [
   {
     nombre: 'Clase CLA Coupé',
     etiquetas: ['Híbrido'],
-    imagen: ClaseCLACoupé, // sin comillas
+    imagen: ClaseCLACoupé,
     precio: '43.733,27 €',
     disponible: true,
     categoria: 'Coupé',
@@ -220,7 +219,6 @@ const modelos = [
     disponible: false,
     categoria: 'Monovolumen',
   },
-  // Agrega más modelos si quieres
 ];
 
 function Modelos() {

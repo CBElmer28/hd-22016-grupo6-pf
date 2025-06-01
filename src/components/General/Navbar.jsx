@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import logo from '../../assets/logo2.png';
 import { FaSearch, FaStar, FaUser, FaBars, FaTimes } from 'react-icons/fa';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import '../../css/Navbar.css';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,7 +9,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 992); // Cambiado a 992px que es el breakpoint de Bootstrap
+      setIsMobile(window.innerWidth <= 1024);
     };
 
     handleResize();
@@ -24,103 +22,163 @@ const Navbar = () => {
     setIsOpen(!isOpen);
   };
 
-  const activeStyle = {
-    color: '#0072c8',
-    fontWeight: '600',
-  };
-
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-black fixed-top">
-      <div className="container-fluid">
-        {/* Logo y hamburguesa */}
-        <NavLink className="navbar-brand" to="/">
-          <img src={logo} alt="Zentauri Quead Logo" className="navbar-logo" />
-        </NavLink>
+    <nav className="fixed top-0 left-0 right-0 bg-black text-white shadow-lg z-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16">
+          {/* Logo y menú principal (izquierda) */}
+          <div className="flex items-center space-x-8">
+            <NavLink to="/" className="flex-shrink-0">
+              <img src={logo} alt="Zentauri Quead Logo" className="h-12 hover:scale-105 transition-transform" />
+            </NavLink>
 
-        <button
-          className="navbar-toggler"
-          type="button"
-          onClick={toggleMenu}
-          aria-label="Toggle navigation"
-        >
-          {isOpen ? <FaTimes /> : <FaBars />}
-        </button>
-
-        {/* Contenido del navbar */}
-        <div className={`collapse navbar-collapse ${isOpen ? 'show' : ''}`} id="navbarContent">
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            <li className="nav-item">
+            {/* Menú principal - solo en desktop */}
+            <div className="hidden lg:flex space-x-8">
               <NavLink
                 to="/modelos"
-                className="nav-link"
-                style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                className={({ isActive }) => 
+                  `text-white hover:text-blue-500 ${isActive ? 'text-blue-500 font-semibold' : ''}`
+                }
               >
                 Modelos
               </NavLink>
-            </li>
-            <li className="nav-item">
               <NavLink
                 to="/comprar"
-                className="nav-link"
-                style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                className={({ isActive }) => 
+                  `text-white hover:text-blue-500 ${isActive ? 'text-blue-500 font-semibold' : ''}`
+                }
               >
                 Comprar
               </NavLink>
-            </li>
-            <li className="nav-item">
               <NavLink
                 to="/servicios"
-                className="nav-link"
-                style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                className={({ isActive }) => 
+                  `text-white hover:text-blue-500 ${isActive ? 'text-blue-500 font-semibold' : ''}`
+                }
               >
                 Servicios
               </NavLink>
-            </li>
-            <li className="nav-item">
               <NavLink
                 to="/marca"
-                className="nav-link"
-                style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                className={({ isActive }) => 
+                  `text-white hover:text-blue-500 ${isActive ? 'text-blue-500 font-semibold' : ''}`
+                }
               >
                 Marca
               </NavLink>
-            </li>
-          </ul>
+            </div>
+          </div>
 
-          {/* Elementos alineados a la derecha */}
-          <div className="d-flex align-items-center">
-            <ul className="navbar-nav">
-              <li className="nav-item">
-                <NavLink
-                  to="/proveedor"
-                  className="nav-link"
-                  style={({ isActive }) => (isActive ? activeStyle : undefined)}
-                >
-                  Proveedor
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink to="/buscar" className="nav-link">
-                  <FaSearch className="icon" />
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink to="/favoritos" className="nav-link">
-                  <FaStar className="icon" />
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink
-                  to="/login"
-                  className="nav-link"
-                  style={({ isActive }) => (isActive ? activeStyle : undefined)}
-                >
-                  <FaUser className="icon me-1" /> Iniciar sesión
-                </NavLink>
-              </li>
-            </ul>
+          {/* Menú derecho y hamburguesa */}
+          <div className="flex items-center space-x-6">
+            {/* Elementos del lado derecho - solo en desktop */}
+            <div className="hidden lg:flex items-center space-x-6">
+              <NavLink
+                to="/proveedor"
+                className={({ isActive }) => 
+                  `text-white hover:text-blue-500 ${isActive ? 'text-blue-500 font-semibold' : ''}`
+                }
+              >
+                Proveedor
+              </NavLink>
+              <NavLink to="/buscar" className="text-white hover:text-blue-500">
+                <FaSearch className="text-xl" />
+              </NavLink>
+              <NavLink to="/favoritos" className="text-white hover:text-blue-500">
+                <FaStar className="text-xl" />
+              </NavLink>
+              <NavLink
+                to="/login"
+                className={({ isActive }) => 
+                  `flex items-center text-white hover:text-blue-500 ${isActive ? 'text-blue-500 font-semibold' : ''}`
+                }
+              >
+                <FaUser className="mr-1 text-xl" /> Iniciar sesión
+              </NavLink>
+            </div>
+
+            {/* Botón hamburguesa - solo en mobile */}
+            <div className="lg:hidden">
+              <button
+                onClick={toggleMenu}
+                className="text-white hover:text-blue-500 focus:outline-none"
+                aria-label="Toggle menu"
+              >
+                {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+              </button>
+            </div>
           </div>
         </div>
+
+        {/* Menú móvil */}
+        {isOpen && (
+          <div className="lg:hidden bg-black bg-opacity-95 px-4 pt-2 pb-4 rounded-b-lg">
+            <div className="flex flex-col space-y-4">
+              <NavLink
+                to="/modelos"
+                onClick={toggleMenu}
+                className={({ isActive }) => 
+                  `text-white hover:text-blue-500 ${isActive ? 'text-blue-500 font-semibold' : ''}`
+                }
+              >
+                Modelos
+              </NavLink>
+              <NavLink
+                to="/comprar"
+                onClick={toggleMenu}
+                className={({ isActive }) => 
+                  `text-white hover:text-blue-500 ${isActive ? 'text-blue-500 font-semibold' : ''}`
+                }
+              >
+                Comprar
+              </NavLink>
+              <NavLink
+                to="/servicios"
+                onClick={toggleMenu}
+                className={({ isActive }) => 
+                  `text-white hover:text-blue-500 ${isActive ? 'text-blue-500 font-semibold' : ''}`
+                }
+              >
+                Servicios
+              </NavLink>
+              <NavLink
+                to="/marca"
+                onClick={toggleMenu}
+                className={({ isActive }) => 
+                  `text-white hover:text-blue-500 ${isActive ? 'text-blue-500 font-semibold' : ''}`
+                }
+              >
+                Marca
+              </NavLink>
+              <NavLink
+                to="/proveedor"
+                onClick={toggleMenu}
+                className={({ isActive }) => 
+                  `text-white hover:text-blue-500 ${isActive ? 'text-blue-500 font-semibold' : ''}`
+                }
+              >
+                Proveedor
+              </NavLink>
+              <div className="flex space-x-4 pt-2">
+                <NavLink to="/buscar" onClick={toggleMenu} className="text-white hover:text-blue-500">
+                  <FaSearch className="text-xl" />
+                </NavLink>
+                <NavLink to="/favoritos" onClick={toggleMenu} className="text-white hover:text-blue-500">
+                  <FaStar className="text-xl" />
+                </NavLink>
+                <NavLink
+                  to="/login"
+                  onClick={toggleMenu}
+                  className={({ isActive }) => 
+                    `flex items-center text-white hover:text-blue-500 ${isActive ? 'text-blue-500 font-semibold' : ''}`
+                  }
+                >
+                  <FaUser className="mr-1 text-xl" /> Iniciar sesión
+                </NavLink>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </nav>
   );

@@ -1,6 +1,4 @@
-// SobreNosotros.js
 import React from 'react';
-import '../../css/SobreNosotros.css';
 import Navbar from '../General/Navbar';
 import Footer from '../General/Footer';
 
