@@ -225,10 +225,8 @@ function Modelos() {
   const [carroceriaFiltro, setCarroceriaFiltro] = useState('');
   const [combustibleFiltro, setCombustibleFiltro] = useState('');
 
-  // Sacar las categorías únicas automáticamente
   const categorias = [...new Set(modelos.map(m => m.categoria))];
 
-  // Aplicar filtros
   const modelosFiltrados = modelos.filter(modelo => {
     const cumpleCarroceria = carroceriaFiltro ? modelo.categoria === carroceriaFiltro : true;
     const cumpleCombustible = combustibleFiltro
@@ -236,19 +234,19 @@ function Modelos() {
       : true;
     return cumpleCarroceria && cumpleCombustible;
   });
+
   return (
     <div>
-      {/* Navbar */}
       <Navbar />
-      <div className="modelos-container">
-        <h1 className="titulo">Nuestros modelos</h1>
-        <p className="descripcion">
+      <div className="px-4 py-8 max-w-7xl mx-auto">
+        <h1 className="text-4xl font-bold text-center mb-4">Nuestros modelos</h1>
+        <p className="text-center text-gray-600 mb-6">
           Descubre nuestro diverso mundo de marcas y modelos: Aquí encontrarás tu vehículo deseado.
         </p>
 
-        <div className="filtros">
-          <div className="filtro-grupo">
-            <span>Carrocería:</span>
+        <div className="flex flex-col md:flex-row gap-4 justify-center mb-8">
+          <div className="flex flex-wrap items-center gap-2">
+            <span className="font-semibold">Carrocería:</span>
             {[
               'Todas',
               'SUV',
@@ -261,11 +259,11 @@ function Modelos() {
             ].map(tipo => (
               <button
                 key={tipo}
-                className={
+                className={`px-3 py-1 rounded-full border text-sm ${
                   carroceriaFiltro === tipo || (tipo === 'Todas' && carroceriaFiltro === '')
-                    ? 'filtro-activo'
-                    : ''
-                }
+                    ? 'bg-black text-white'
+                    : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                }`}
                 onClick={() => setCarroceriaFiltro(tipo === 'Todas' ? '' : tipo)}
               >
                 {tipo}
@@ -273,16 +271,16 @@ function Modelos() {
             ))}
           </div>
 
-          <div className="filtro-grupo">
-            <span>Combustible:</span>
+          <div className="flex flex-wrap items-center gap-2">
+            <span className="font-semibold">Combustible:</span>
             {['Todos', 'Eléctrico', 'Híbrido'].map(tipo => (
               <button
                 key={tipo}
-                className={
+                className={`px-3 py-1 rounded-full border text-sm ${
                   combustibleFiltro === tipo || (tipo === 'Todos' && combustibleFiltro === '')
-                    ? 'filtro-activo'
-                    : ''
-                }
+                    ? 'bg-black text-white'
+                    : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                }`}
                 onClick={() => setCombustibleFiltro(tipo === 'Todos' ? '' : tipo)}
               >
                 {tipo}
@@ -291,46 +289,59 @@ function Modelos() {
           </div>
         </div>
 
-        {/* Mostrar modelos agrupados por categoría */}
         {categorias.map(categoria => {
-          // Filtrar modelos de esta categoría
           const modelosCategoria = modelosFiltrados.filter(m => m.categoria === categoria);
-
-          // Si no hay modelos en esta categoría después de aplicar filtros, no renderizar
           if (modelosCategoria.length === 0) return null;
 
           return (
-            <div key={categoria}>
-              <h2 className="subtitulo">{categoria}</h2>
-              <div className="modelos-grid">
+            <div key={categoria} className="mb-10">
+              <h2 className="text-2xl font-semibold mb-4">{categoria}</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 {modelosCategoria.map((modelo, index) => (
-                  <div key={index} className="modelo-card">
-                    <h3>{modelo.nombre}</h3>
-
-                    <div className="etiquetas">
-                      {modelo.etiquetas.map((etiqueta, i) => (
-                        <span key={i} className={`etiqueta ${etiqueta.toLowerCase()}`}>
-                          {etiqueta}
-                        </span>
-                      ))}
-                    </div>
-
-                    <div className="imagen-container">
-                      <img src={modelo.imagen} alt={modelo.nombre} className="modelo-imagen" />
-                      <div className="overlay">
-                        <button className="btn-info">Más información</button>
+                  <div
+                    key={index}
+                    className="relative bg-white border rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow"
+                  >
+                    <div className="p-4">
+                      <h3 className="text-lg font-semibold mb-2">{modelo.nombre}</h3>
+                      <div className="flex flex-wrap gap-1 mb-3">
+                        {modelo.etiquetas.map((etiqueta, i) => (
+                          <span
+                            key={i}
+                            className={`px-2 py-0.5 text-xs rounded-full ${
+                              etiqueta === 'Eléctrico'
+                                ? 'bg-blue-100 text-blue-800'
+                                : etiqueta === 'Híbrido'
+                                  ? 'bg-green-100 text-green-800'
+                                  : 'bg-gray-100 text-gray-700'
+                            }`}
+                          >
+                            {etiqueta}
+                          </span>
+                        ))}
                       </div>
                     </div>
-
-                    <p className="precio">
-                      {modelo.disponible ? (
-                        <>
-                          <span>Desde</span> <strong>{modelo.precio}</strong>
-                        </>
-                      ) : (
-                        modelo.precio
-                      )}
-                    </p>
+                    <div className="relative group">
+                      <img
+                        src={modelo.imagen}
+                        alt={modelo.nombre}
+                        className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <button className="bg-white text-black px-4 py-2 rounded-md font-medium">
+                          Más...
+                        </button>
+                      </div>
+                    </div>
+                    <div className="p-4 border-t">
+                      <p
+                        className={`text-sm font-medium ${
+                          modelo.disponible ? 'text-green-600' : 'text-red-600'
+                        }`}
+                      >
+                        {modelo.precio}
+                      </p>
+                    </div>
                   </div>
                 ))}
               </div>
@@ -338,7 +349,6 @@ function Modelos() {
           );
         })}
       </div>
-      {/* Footer */}
       <Footer />
     </div>
   );
