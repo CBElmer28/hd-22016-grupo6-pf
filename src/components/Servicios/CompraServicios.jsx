@@ -30,7 +30,7 @@ const MercedesSearchForm = () => {
               background:
                 'linear-gradient(90deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 50%, transparent 100%)',
               padding: '3rem',
-              zIndex: 2, // Asegura que esté sobre la imagen
+              zIndex: 2, // Asegura que esté sobre la imagen correspondiente
               top: 0,
               left: 0,
             }}
