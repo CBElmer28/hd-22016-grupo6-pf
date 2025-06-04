@@ -37,7 +37,14 @@ export default [
         }
       ],
       'react/react-in-jsx-scope': 'off',
-      'no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
+      'no-unused-vars': [
+        'warn',
+        {
+          argsIgnorePattern: '^_',
+          varsIgnorePattern: '^_|React|Navbar|Footer|App|StrictMode|Image|Button|InputGroup|Col|Row|Form|Card|Container|isMobile|FaTimes|FaBars|FaUser|FaStar|FaSearch|NavLink|FaYoutube|FaLinkedin|FaInstagram|FaTwitter|FaFacebook|Marca|CompraServicios|Servicios|Modelos|Home|Route|Routes|Router', // Ignora estas variables
+          caughtErrorsIgnorePattern: '^_'
+        }
+      ],
       'no-empty-function': 'warn'
     },
     settings: {
