@@ -15,7 +15,7 @@ const MercedesSearchForm = () => {
           className="mb-4 border-0 p-0 overflow-hidden"
           style={{ height: '700px', position: 'relative', left: '-17.5rem', width: '100vw' }}
         >
-          {/* Imagen de fondo */}
+          {/* Imagen de fondooooo  */}
           <Image
             src={modelocompra}
             alt="Vehículo premium de ocasión"
@@ -30,7 +30,7 @@ const MercedesSearchForm = () => {
               background:
                 'linear-gradient(90deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 50%, transparent 100%)',
               padding: '3rem',
-              zIndex: 2, // Asegura que esté sobre la imagen
+              zIndex: 2, // Asegura que esté sobre la imagen correspondiente
               top: 0,
               left: 0,
             }}
