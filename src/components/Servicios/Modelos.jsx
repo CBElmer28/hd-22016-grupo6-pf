@@ -238,7 +238,7 @@ function Modelos() {
   return (
     <div>
       <Navbar />
-      <div className="px-4 py-8 max-w-7xl mx-auto">
+      <div className="px-4 py-20 max-w-7xl mx-auto">
         <h1 className="text-4xl font-bold text-center mb-4">Nuestros modelos</h1>
         <p className="text-center text-gray-600 mb-6">
           Descubre nuestro diverso mundo de marcas y modelos: Aquí encontrarás tu vehículo deseado.
