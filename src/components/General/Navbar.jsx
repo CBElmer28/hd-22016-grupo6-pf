@@ -26,42 +26,46 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 bg-black text-white shadow-lg z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo y menú principal (izquierda) */}
+          {/* Logo y menú principal*/}
           <div className="flex items-center space-x-8">
             <NavLink to="/" className="flex-shrink-0">
-              <img src={logo} alt="Zentauri Quead Logo" className="h-12 hover:scale-105 transition-transform" />
+              <img
+                src={logo}
+                alt="Zentauri Quead Logo"
+                className="h-12 hover:scale-105 transition-transform"
+              />
             </NavLink>
 
             {/* Menú principal - solo en desktop */}
             <div className="hidden lg:flex space-x-8">
               <NavLink
                 to="/modelos"
-                className={({ isActive }) => 
-                  `text-white hover:text-blue-500 ${isActive ? 'text-blue-500 font-semibold' : ''}`
+                className={({ isActive }) =>
+                  `text-white hover:text-blue-500 no-underline ${isActive ? 'text-blue-500 font-semibold' : ''}`
                 }
               >
                 Modelos
               </NavLink>
               <NavLink
                 to="/comprar"
-                className={({ isActive }) => 
-                  `text-white hover:text-blue-500 ${isActive ? 'text-blue-500 font-semibold' : ''}`
+                className={({ isActive }) =>
+                  `text-white hover:text-blue-500 no-underline ${isActive ? 'text-blue-500 font-semibold' : ''}`
                 }
               >
                 Comprar
               </NavLink>
               <NavLink
                 to="/servicios"
-                className={({ isActive }) => 
-                  `text-white hover:text-blue-500 ${isActive ? 'text-blue-500 font-semibold' : ''}`
+                className={({ isActive }) =>
+                  `text-white hover:text-blue-500 no-underline ${isActive ? 'text-blue-500 font-semibold' : ''}`
                 }
               >
                 Servicios
               </NavLink>
               <NavLink
                 to="/marca"
-                className={({ isActive }) => 
-                  `text-white hover:text-blue-500 ${isActive ? 'text-blue-500 font-semibold' : ''}`
+                className={({ isActive }) =>
+                  `text-white hover:text-blue-500 no-underline ${isActive ? 'text-blue-500 font-semibold' : ''}`
                 }
               >
                 Marca
@@ -69,14 +73,14 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* Menú derecho y hamburguesa */}
+          {/* Menú derecho */}
           <div className="flex items-center space-x-6">
             {/* Elementos del lado derecho - solo en desktop */}
             <div className="hidden lg:flex items-center space-x-6">
               <NavLink
                 to="/proveedor"
-                className={({ isActive }) => 
-                  `text-white hover:text-blue-500 ${isActive ? 'text-blue-500 font-semibold' : ''}`
+                className={({ isActive }) =>
+                  `text-white hover:text-blue-500 no-underline ${isActive ? 'text-blue-500 font-semibold' : ''}`
                 }
               >
                 Proveedor
@@ -89,8 +93,8 @@ const Navbar = () => {
               </NavLink>
               <NavLink
                 to="/login"
-                className={({ isActive }) => 
-                  `flex items-center text-white hover:text-blue-500 ${isActive ? 'text-blue-500 font-semibold' : ''}`
+                className={({ isActive }) =>
+                  `flex items-center text-white hover:text-blue-500 no-underline ${isActive ? 'text-blue-500 font-semibold' : ''}`
                 }
               >
                 <FaUser className="mr-1 text-xl" /> Iniciar sesión
@@ -117,8 +121,8 @@ const Navbar = () => {
               <NavLink
                 to="/modelos"
                 onClick={toggleMenu}
-                className={({ isActive }) => 
-                  `text-white hover:text-blue-500 ${isActive ? 'text-blue-500 font-semibold' : ''}`
+                className={({ isActive }) =>
+                  `text-white hover:text-blue-500 no-underline ${isActive ? 'text-blue-500 font-semibold' : ''}`
                 }
               >
                 Modelos
@@ -126,8 +130,8 @@ const Navbar = () => {
               <NavLink
                 to="/comprar"
                 onClick={toggleMenu}
-                className={({ isActive }) => 
-                  `text-white hover:text-blue-500 ${isActive ? 'text-blue-500 font-semibold' : ''}`
+                className={({ isActive }) =>
+                  `text-white hover:text-blue-500 no-underline ${isActive ? 'text-blue-500 font-semibold' : ''}`
                 }
               >
                 Comprar
@@ -135,8 +139,8 @@ const Navbar = () => {
               <NavLink
                 to="/servicios"
                 onClick={toggleMenu}
-                className={({ isActive }) => 
-                  `text-white hover:text-blue-500 ${isActive ? 'text-blue-500 font-semibold' : ''}`
+                className={({ isActive }) =>
+                  `text-white hover:text-blue-500 no-underline ${isActive ? 'text-blue-500 font-semibold' : ''}`
                 }
               >
                 Servicios
@@ -144,8 +148,8 @@ const Navbar = () => {
               <NavLink
                 to="/marca"
                 onClick={toggleMenu}
-                className={({ isActive }) => 
-                  `text-white hover:text-blue-500 ${isActive ? 'text-blue-500 font-semibold' : ''}`
+                className={({ isActive }) =>
+                  `text-white hover:text-blue-500 no-underline ${isActive ? 'text-blue-500 font-semibold' : ''}`
                 }
               >
                 Marca
@@ -153,24 +157,32 @@ const Navbar = () => {
               <NavLink
                 to="/proveedor"
                 onClick={toggleMenu}
-                className={({ isActive }) => 
-                  `text-white hover:text-blue-500 ${isActive ? 'text-blue-500 font-semibold' : ''}`
+                className={({ isActive }) =>
+                  `text-white hover:text-blue-500 no-underline ${isActive ? 'text-blue-500 font-semibold' : ''}`
                 }
               >
                 Proveedor
               </NavLink>
               <div className="flex space-x-4 pt-2">
-                <NavLink to="/buscar" onClick={toggleMenu} className="text-white hover:text-blue-500">
+                <NavLink
+                  to="/buscar"
+                  onClick={toggleMenu}
+                  className="text-white hover:text-blue-500"
+                >
                   <FaSearch className="text-xl" />
                 </NavLink>
-                <NavLink to="/favoritos" onClick={toggleMenu} className="text-white hover:text-blue-500">
+                <NavLink
+                  to="/favoritos"
+                  onClick={toggleMenu}
+                  className="text-white hover:text-blue-500"
+                >
                   <FaStar className="text-xl" />
                 </NavLink>
                 <NavLink
                   to="/login"
                   onClick={toggleMenu}
-                  className={({ isActive }) => 
-                    `flex items-center text-white hover:text-blue-500 ${isActive ? 'text-blue-500 font-semibold' : ''}`
+                  className={({ isActive }) =>
+                    `flex items-center text-white hover:text-blue-500 no-underline ${isActive ? 'text-blue-500 font-semibold' : ''}`
                   }
                 >
                   <FaUser className="mr-1 text-xl" /> Iniciar sesión
