@@ -6,22 +6,18 @@ function SobreNosotros() {
   return (
     <>
       <Navbar />
-      
       {/* Sección Intro */}
-      <section 
+      <section
         className="w-full h-screen flex flex-col justify-center items-start px-16 py-12 md:px-20 md:py-16"
         style={{
-          backgroundImage: `
-            linear-gradient(to right, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1)),
-            url('https://www.mercedes-benz.es/content/dam/hq/passengercars/the-brand/revamp/stage/12-2024/images/mercedes-benz-brand-stage-3840x3840-12-2024.jpg/1745332949800.jpg?im=Crop,rect=(0,1068,3840,1704);Resize=(2730)')
-          `,
+          backgroundImage: `linear-gradient(to right, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1)), url('https://www.mercedes-benz.es/content/dam/hq/passengercars/the-brand/revamp/stage/12-2024/images/mercedes-benz-brand-stage-3840x3840-12-2024.jpg/1745332949800.jpg?im=Crop,rect=(0,1068,3840,1704);Resize=(2730)')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
-          position: 'relative'
+          position: 'relative',
         }}
       >
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-white via-white/50 to-transparent z-10"></div>
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-white via-white/50 to-transparent z-10" />
         <h1 className="text-5xl font-bold mb-5 text-black relative z-20 animate-[aparecer_1s_ease-out_forwards] hover:after:scale-x-100 after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-black after:left-0 after:-bottom-1 after:scale-x-0 after:transition-transform after:duration-300 after:ease-in-out">
           Bienvenido a Zentauri Quead
         </h1>
@@ -99,7 +95,7 @@ function SobreNosotros() {
           </div>
         </section>
       </div>
-      
+
       <Footer />
     </>
   );
