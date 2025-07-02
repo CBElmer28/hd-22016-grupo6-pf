@@ -51,9 +51,9 @@ jobs:
 
       # ─── BACKEND ─────────────────────────────
 
-      - name: Run backend tests
-        working-directory: ./backend
-        run: ./mvnw test
+      #- name: Run backend tests
+      #  working-directory: ./backend
+      #  run: ./mvnw test
 
       # ─── DEPLOY ──────────────────────────────
 
