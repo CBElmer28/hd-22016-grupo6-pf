@@ -1,8 +1,9 @@
 {
-  "name": "hd-22016-grupo6-apf2",
+  "name": "hd-22016-grupo6-apf3",
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://cbelmer28.github.io/hd-22016-grupo6-apf3",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -11,7 +12,9 @@
     "format": "prettier --write \"src/**/*.{js,jsx,css,html,json}\"",
     "format:check": "prettier --check \"src/**/*.{js,jsx,css,html,json}\"",
     "prepare": "husky",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:ui": "vitest"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.8",
@@ -27,6 +30,8 @@
     "@commitlint/cli": "^19.8.0",
     "@commitlint/config-conventional": "^19.8.0",
     "@eslint/js": "^9.28.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0",
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
     "@vitejs/plugin-react": "^4.4.1",
@@ -38,9 +43,11 @@
     "eslint-plugin-react-refresh": "^0.4.20",
     "globals": "^16.0.0",
     "husky": "^9.1.7",
+    "jsdom": "^26.1.0",
     "lint-staged": "^15.5.1",
     "prettier": "^3.5.3",
-    "vite": "^6.3.5"
+    "vite": "^6.3.5",
+    "vitest": "^3.2.4"
   },
   "lint-staged": {
     "src/**/*.{js,jsx}": [
