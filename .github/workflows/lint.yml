@@ -1,4 +1,4 @@
-name: Lint and Format
+name: Fullstack CI/CD React + Spring Boot
 
 on:
   push:
@@ -7,23 +7,58 @@ on:
     branches: [main, develop]
 
 jobs:
-  lint:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Set up Node.js
+      # 👉 Configura Node.js para el frontend
+      - name: Set up Node
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: "18"
 
-      - name: Install dependencies
+      # 👉 Configura Java para backend (Spring Boot)
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: "temurin"
+          java-version: "17"
+
+      # ─── FRONTEND ─────────────────────────────
+
+      - name: Install frontend dependencies
+        working-directory: ./frontend
         run: npm ci
 
       - name: Run ESLint
+        working-directory: ./frontend
         run: npm run lint
 
-      - name: Run Prettier Check
+      - name: Run Prettier check
+        working-directory: ./frontend
         run: npm run format:check
+
+      - name: Run frontend tests
+        working-directory: ./frontend
+        run: npm test -- --watchAll=false
+
+      - name: Build React app
+        working-directory: ./frontend
+        run: npm run build
+
+      # ─── BACKEND ─────────────────────────────
+
+      - name: Run backend tests
+        working-directory: ./backend
+        run: ./mvnw test
+
+      # ─── DEPLOY ──────────────────────────────
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./frontend/build
