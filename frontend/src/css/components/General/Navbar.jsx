@@ -60,7 +60,8 @@ const Navbar = () => {
                 <NavLink
                   to="/servicios"
                   className={({ isActive }) =>
-                    `text-white hover:text-blue-500 no-underline ${isActive ? 'text-blue-500 font-semibold' : ''
+                    `text-white hover:text-blue-500 no-underline ${
+                      isActive ? 'text-blue-500 font-semibold' : ''
                     }`
                   }
                 >
@@ -77,7 +78,6 @@ const Navbar = () => {
                   </NavLink>
                 </div>
               </div>
-
 
               <NavLink
                 to="/marca"
@@ -134,29 +134,57 @@ const Navbar = () => {
         {isOpen && (
           <div className="lg:hidden bg-black bg-opacity-95 px-4 pt-2 pb-4 rounded-b-lg">
             <div className="flex flex-col space-y-4">
-              <NavLink to="/modelos" onClick={toggleMenu} className="text-white hover:text-blue-500">
+              <NavLink
+                to="/modelos"
+                onClick={toggleMenu}
+                className="text-white hover:text-blue-500"
+              >
                 Modelos
               </NavLink>
-              <NavLink to="/comprar" onClick={toggleMenu} className="text-white hover:text-blue-500">
+              <NavLink
+                to="/comprar"
+                onClick={toggleMenu}
+                className="text-white hover:text-blue-500"
+              >
                 Comprar
               </NavLink>
-              <NavLink to="/servicios" onClick={toggleMenu} className="text-white hover:text-blue-500">
+              <NavLink
+                to="/servicios"
+                onClick={toggleMenu}
+                className="text-white hover:text-blue-500"
+              >
                 Servicios
               </NavLink>
-              <NavLink to="/contacto" onClick={toggleMenu} className="text-white hover:text-blue-500 pl-4">
+              <NavLink
+                to="/contacto"
+                onClick={toggleMenu}
+                className="text-white hover:text-blue-500 pl-4"
+              >
                 └ Contacto
               </NavLink>
               <NavLink to="/marca" onClick={toggleMenu} className="text-white hover:text-blue-500">
                 Marca
               </NavLink>
-              <NavLink to="/proveedor" onClick={toggleMenu} className="text-white hover:text-blue-500">
+              <NavLink
+                to="/proveedor"
+                onClick={toggleMenu}
+                className="text-white hover:text-blue-500"
+              >
                 Proveedor
               </NavLink>
               <div className="flex space-x-4 pt-2">
-                <NavLink to="/buscar" onClick={toggleMenu} className="text-white hover:text-blue-500">
+                <NavLink
+                  to="/buscar"
+                  onClick={toggleMenu}
+                  className="text-white hover:text-blue-500"
+                >
                   <FaSearch className="text-xl" />
                 </NavLink>
-                <NavLink to="/favoritos" onClick={toggleMenu} className="text-white hover:text-blue-500">
+                <NavLink
+                  to="/favoritos"
+                  onClick={toggleMenu}
+                  className="text-white hover:text-blue-500"
+                >
                   <FaStar className="text-xl" />
                 </NavLink>
                 <NavLink
