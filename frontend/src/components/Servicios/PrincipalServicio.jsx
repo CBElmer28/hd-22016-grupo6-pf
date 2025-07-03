@@ -95,20 +95,25 @@ const Principal = () => {
   return (
     <div className="font-sans bg-gray-50">
       {/* Navbar */}
-      <Navbar />
+      <Navbar data-testid="navbar" />
 
       {/* Sección hero con video */}
       <section className="relative h-screen min-h-[600px] overflow-hidden">
         {/* Overlay de carga */}
         {!isVideoLoaded && (
           <div className="absolute inset-0 bg-gray-900 z-20 flex items-center justify-center">
-            <div className="animate-pulse text-white text-xl">Cargando...</div>
+            <div className="animate-pulse text-white text-xl" data-testid="loading-overlay">
+              Cargando...
+            </div>
           </div>
         )}
 
         <div className="flex items-center h-full px-[5%] relative z-10">
           <div className="text-left max-w-[600px] p-8 bg-black bg-opacity-70 rounded-lg backdrop-blur-sm transform transition-all duration-500 hover:scale-[1.02]">
-            <h1 className="text-5xl text-white mb-6 leading-tight font-bold">
+            <h1
+              className="text-5xl text-white mb-6 leading-tight font-bold"
+              data-testid="main-title"
+            >
               Nuestros <span className="text-primary">servicios</span>
             </h1>
             <p className="text-xl text-gray-200 mb-8 leading-relaxed">
@@ -129,6 +134,7 @@ const Principal = () => {
             playsInline
             className="w-full h-full object-cover"
             onLoadedData={() => setIsVideoLoaded(true)}
+            data-testid="hero-video"
           >
             <source src={heroVideo} type="video/mp4" />
             Tu navegador no soporta el elemento de video.
@@ -200,6 +206,7 @@ const Principal = () => {
           ].map((service, index) => (
             <div
               key={index}
+              data-testid="service-card"
               className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group"
             >
               <div className="h-48 overflow-hidden">
@@ -229,7 +236,10 @@ const Principal = () => {
       </section>
 
       {/* Sección de Soluciones de Carga */}
-      <section className="relative py-24 md:py-32 text-center text-white overflow-hidden">
+      <section
+        className="relative py-24 md:py-32 text-center text-white overflow-hidden"
+        data-testid="charging-section"
+      >
         <div className="absolute inset-0 w-full h-full">
           <img
             src={chargingBg}
@@ -244,7 +254,10 @@ const Principal = () => {
           <div className="inline-block mb-8">
             <span className="text-primary font-semibold text-lg">INNOVACIÓN</span>
           </div>
-          <h2 className="text-4xl sm:text-5xl font-bold mb-6 leading-tight">
+          <h2
+            className="text-4xl sm:text-5xl font-bold mb-6 leading-tight"
+            data-testid="charging-title"
+          >
             Soluciones de carga <span className="text-primary">inteligentes</span>
           </h2>
           <p className="text-xl md:text-2xl mb-10 leading-relaxed max-w-3xl mx-auto">
@@ -300,6 +313,7 @@ const Principal = () => {
                     onClick={() => goToSlide(index)}
                     className={`h-3 rounded-full transition-all duration-300 ${index === activeSlide ? 'bg-primary w-8' : 'bg-gray-300 w-3'}`}
                     aria-label={`Ir al slide ${index + 1}`}
+                    data-testid={`slide-indicator-${index}`}
                   />
                 ))}
               </div>
@@ -323,6 +337,7 @@ const Principal = () => {
             <button
               onClick={prevSlide}
               className="flex items-center text-gray-700 hover:text-primary transition-all"
+              data-testid="prev-button"
             >
               <span className="bg-white w-12 h-12 rounded-full flex items-center justify-center shadow-md mr-3 hover:bg-primary hover:text-white">
                 ‹
@@ -333,6 +348,7 @@ const Principal = () => {
             <button
               onClick={nextSlide}
               className="flex items-center text-gray-700 hover:text-primary transition-all"
+              data-testid="next-button"
             >
               <span className="font-medium">Siguiente</span>
               <span className="bg-white w-12 h-12 rounded-full flex items-center justify-center shadow-md ml-3 hover:bg-primary hover:text-white">
@@ -344,7 +360,7 @@ const Principal = () => {
       </section>
 
       {/* Footer */}
-      <Footer />
+      <Footer data-testid="footer" />
 
       {/* Estilos de animación */}
       <style jsx>{`

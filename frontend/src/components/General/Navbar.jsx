@@ -37,7 +37,7 @@ const Navbar = () => {
             </NavLink>
 
             {/* Menú principal - solo en desktop */}
-            <div className="hidden lg:flex space-x-8">
+            <div className="hidden lg:flex space-x-8 items-center">
               <NavLink
                 to="/modelos"
                 className={({ isActive }) =>
@@ -54,14 +54,31 @@ const Navbar = () => {
               >
                 Comprar
               </NavLink>
-              <NavLink
-                to="/servicios"
-                className={({ isActive }) =>
-                  `text-white hover:text-blue-500 no-underline ${isActive ? 'text-blue-500 font-semibold' : ''}`
-                }
-              >
-                Servicios
-              </NavLink>
+
+              {/* Servicios con submenú */}
+              <div className="relative group">
+                <NavLink
+                  to="/servicios"
+                  className={({ isActive }) =>
+                    `text-white hover:text-blue-500 no-underline ${
+                      isActive ? 'text-blue-500 font-semibold' : ''
+                    }`
+                  }
+                >
+                  Servicios
+                </NavLink>
+
+                {/* Submenú Contacto */}
+                <div className="absolute top-full left-0 mt-1 hidden group-hover:block bg-black shadow-lg rounded z-50 w-40">
+                  <NavLink
+                    to="/contacto"
+                    className="block px-4 py-2 text-white hover:bg-gray-100 hover:text-blue-600"
+                  >
+                    Contacto
+                  </NavLink>
+                </div>
+              </div>
+
               <NavLink
                 to="/marca"
                 className={({ isActive }) =>
@@ -70,12 +87,19 @@ const Navbar = () => {
               >
                 Marca
               </NavLink>
+              <NavLink
+                to="/cotizar"
+                className={({ isActive }) =>
+                  `text-white hover:text-blue-500 no-underline ${isActive ? 'text-blue-500 font-semibold' : ''}`
+                }
+              >
+                Cotizar
+              </NavLink>
             </div>
           </div>
 
           {/* Menú derecho */}
           <div className="flex items-center space-x-6">
-            {/* Elementos del lado derecho - solo en desktop */}
             <div className="hidden lg:flex items-center space-x-6">
               <NavLink
                 to="/proveedor"
@@ -121,45 +145,38 @@ const Navbar = () => {
               <NavLink
                 to="/modelos"
                 onClick={toggleMenu}
-                className={({ isActive }) =>
-                  `text-white hover:text-blue-500 no-underline ${isActive ? 'text-blue-500 font-semibold' : ''}`
-                }
+                className="text-white hover:text-blue-500"
               >
                 Modelos
               </NavLink>
               <NavLink
                 to="/comprar"
                 onClick={toggleMenu}
-                className={({ isActive }) =>
-                  `text-white hover:text-blue-500 no-underline ${isActive ? 'text-blue-500 font-semibold' : ''}`
-                }
+                className="text-white hover:text-blue-500"
               >
                 Comprar
               </NavLink>
               <NavLink
                 to="/servicios"
                 onClick={toggleMenu}
-                className={({ isActive }) =>
-                  `text-white hover:text-blue-500 no-underline ${isActive ? 'text-blue-500 font-semibold' : ''}`
-                }
+                className="text-white hover:text-blue-500"
               >
                 Servicios
               </NavLink>
               <NavLink
-                to="/marca"
+                to="/contacto"
                 onClick={toggleMenu}
-                className={({ isActive }) =>
-                  `text-white hover:text-blue-500 no-underline ${isActive ? 'text-blue-500 font-semibold' : ''}`
-                }
+                className="text-white hover:text-blue-500 pl-4"
               >
+                └ Contacto
+              </NavLink>
+              <NavLink to="/marca" onClick={toggleMenu} className="text-white hover:text-blue-500">
                 Marca
               </NavLink>
               <NavLink
                 to="/proveedor"
                 onClick={toggleMenu}
-                className={({ isActive }) =>
-                  `text-white hover:text-blue-500 no-underline ${isActive ? 'text-blue-500 font-semibold' : ''}`
-                }
+                className="text-white hover:text-blue-500"
               >
                 Proveedor
               </NavLink>
@@ -181,9 +198,7 @@ const Navbar = () => {
                 <NavLink
                   to="/login"
                   onClick={toggleMenu}
-                  className={({ isActive }) =>
-                    `flex items-center text-white hover:text-blue-500 no-underline ${isActive ? 'text-blue-500 font-semibold' : ''}`
-                  }
+                  className="flex items-center text-white hover:text-blue-500"
                 >
                   <FaUser className="mr-1 text-xl" /> Iniciar sesión
                 </NavLink>
