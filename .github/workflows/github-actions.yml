@@ -14,13 +14,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # 👉 Configura Node.js para el frontend
+      # Configura Node.js para el frontend
       - name: Set up Node
         uses: actions/setup-node@v3
         with:
           node-version: "18"
 
-      # 👉 Configura Java para backend (Spring Boot)
+      # Configura Java para backend (Spring Boot)
       - name: Set up JDK
         uses: actions/setup-java@v4
         with:
@@ -33,13 +33,13 @@ jobs:
         working-directory: ./frontend
         run: npm ci
 
-      - name: Run ESLint
-        working-directory: ./frontend
-        run: npm run lint
-
       - name: Run Prettier check
         working-directory: ./frontend
         run: npm run format:check
+
+      - name: Run ESLint
+        working-directory: ./frontend
+        run: npm run lint
 
       - name: Run frontend tests
         working-directory: ./frontend
@@ -50,10 +50,17 @@ jobs:
         run: npm run build
 
       # ─── BACKEND ─────────────────────────────
+      - name: Dar permisos de ejecución a mvnw
+        working-directory: ./backend
+        run: chmod +x mvnw
 
-      #- name: Run backend tests
-      #  working-directory: ./backend
-      #  run: ./mvnw test
+      - name: Run backend tests
+        working-directory: ./backend
+        run: ./mvnw test -e -X
+
+      - name: Mostrar reportes de tests fallidos
+        if: failure()
+        run: cat ./backend/target/surefire-reports/*.txt || true
 
       # ─── DEPLOY ──────────────────────────────
 
