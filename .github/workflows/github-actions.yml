@@ -50,7 +50,10 @@ jobs:
         run: npm run build
 
       # ─── BACKEND ─────────────────────────────
-
+      - name: Dar permisos de ejecución a mvnw
+        working-directory: ./backend
+        run: chmod +x mvnw
+        
       - name: Run backend tests
         working-directory: ./backend
         run: ./mvnw test
