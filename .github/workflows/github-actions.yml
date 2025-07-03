@@ -53,10 +53,14 @@ jobs:
       - name: Dar permisos de ejecución a mvnw
         working-directory: ./backend
         run: chmod +x mvnw
-        
+
       - name: Run backend tests
         working-directory: ./backend
-        run: ./mvnw test
+        run: ./mvnw test -e -X
+
+      - name: Mostrar reportes de tests fallidos
+        if: failure()
+        run: cat ./backend/target/surefire-reports/*.txt || true
 
       # ─── DEPLOY ──────────────────────────────
 
