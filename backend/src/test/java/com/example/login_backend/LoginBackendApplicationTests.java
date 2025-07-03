@@ -4,7 +4,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class LoginBackendApplicationTests {
+@ActiveProfiles("test")
+class LoginBackendApplicationTests{
 
 	@Test
 	void contextLoads() {
