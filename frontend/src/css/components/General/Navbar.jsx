@@ -87,14 +87,6 @@ const Navbar = () => {
               >
                 Marca
               </NavLink>
-                            <NavLink
-                to="/cotizar"
-                className={({ isActive }) =>
-                  `text-white hover:text-blue-500 no-underline ${isActive ? 'text-blue-500 font-semibold' : ''}`
-                }
-              >
-                Cotizar
-              </NavLink>
             </div>
           </div>
 
