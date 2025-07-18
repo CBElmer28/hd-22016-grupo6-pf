@@ -47,7 +47,7 @@ jobs:
 
       - name: Build React app
         working-directory: ./frontend
-        run: npm run build
+        run: npm run build -- --mode production
 
       # ─── BACKEND ─────────────────────────────
       - name: Dar permisos de ejecución a mvnw
