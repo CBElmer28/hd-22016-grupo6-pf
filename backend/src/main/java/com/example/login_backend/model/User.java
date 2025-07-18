@@ -13,8 +13,6 @@ public class User {
 
     private String password;
 
-    // --- Agrega estos métodos si no están ---
-
     public Long getId() {
         return id;
     }
@@ -31,7 +29,7 @@ public class User {
         this.username = username;
     }
 
-    public String getPassword() {   // 🔴 Este es el que faltaba
+    public String getPassword() {  
         return password;
     }
 
