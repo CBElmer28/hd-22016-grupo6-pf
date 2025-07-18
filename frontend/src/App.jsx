@@ -11,7 +11,7 @@ import Register from './components/Servicios/Register';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/hd-22016-grupo6-pf">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/modelos" element={<Modelos />} />
