@@ -8,6 +8,7 @@ import Contacto from './components/Servicios/Contacto';
 import Cotizar from './components/Servicios/Cotizar';
 import Login from './components/Servicios/Login';
 import Register from './components/Servicios/Register';
+import Historia from './components/Servicios/Historia';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/cotizar" element={<Cotizar />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/historia" element={<Historia />} />
       </Routes>
     </Router>
   );

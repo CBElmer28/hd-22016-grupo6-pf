@@ -95,6 +95,14 @@ const Navbar = () => {
               >
                 Cotizar
               </NavLink>
+              <NavLink
+                to="/historia"
+                className={({ isActive }) =>
+                  `text-white hover:text-blue-500 no-underline ${isActive ? 'text-blue-500 font-semibold' : ''}`
+                }
+              >
+                Historia
+              </NavLink>
             </div>
           </div>
 
@@ -166,12 +174,26 @@ const Navbar = () => {
               <NavLink
                 to="/contacto"
                 onClick={toggleMenu}
-                className="text-white hover:text-blue-500 pl-4"
+                className="text-white hover:text-blue-500"
               >
-                └ Contacto
+                Contacto
               </NavLink>
               <NavLink to="/marca" onClick={toggleMenu} className="text-white hover:text-blue-500">
                 Marca
+              </NavLink>
+              <NavLink
+                to="/cotizar"
+                onClick={toggleMenu}
+                className="text-white hover:text-blue-500"
+              >
+                Cotizar
+              </NavLink>
+              <NavLink
+                to="/historia"
+                onClick={toggleMenu}
+                className="text-white hover:text-blue-500"
+              >
+                Historia
               </NavLink>
               <NavLink
                 to="/proveedor"
