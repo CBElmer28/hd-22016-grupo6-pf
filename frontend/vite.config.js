@@ -5,7 +5,7 @@ import tailwindcss from '@tailwindcss/vite';
 // https://vite.dev/config/
 export default defineConfig(({ mode }) => ({
   // Evita rutas rotas en producción (GitHub Pages)
-  base: mode === 'production' ? '/hd-22016-grupo6-pf/' : '/',
+  base: '/hd-22016-grupo6-pf/',
   plugins: [react(), tailwindcss()],
   test: {
     globals: true,

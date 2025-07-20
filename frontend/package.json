@@ -1,9 +1,9 @@
 {
-  "name": "hd-22016-grupo6-apf3",
+  "name": "hd-22016-grupo6-pf",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://cbelmer28.github.io/hd-22016-grupo6-apf3",
+  "homepage": "https://cbelmer28.github.io/hd-22016-grupo6-pf",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
