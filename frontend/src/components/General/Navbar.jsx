@@ -96,6 +96,14 @@ const Navbar = () => {
                 Cotizar
               </NavLink>
               <NavLink
+                to="/garantia"
+                className={({ isActive }) =>
+                  `text-white hover:text-blue-500 no-underline ${isActive ? 'text-blue-500 font-semibold' : ''}`
+                }
+              >
+                Garantía
+              </NavLink>
+              <NavLink
                 to="/historia"
                 className={({ isActive }) =>
                   `text-white hover:text-blue-500 no-underline ${isActive ? 'text-blue-500 font-semibold' : ''}`
@@ -187,6 +195,13 @@ const Navbar = () => {
                 className="text-white hover:text-blue-500"
               >
                 Cotizar
+              </NavLink>
+              <NavLink
+                to="/garantia"
+                onClick={toggleMenu}
+                className="text-white hover:text-blue-500"
+              >
+                Garantía
               </NavLink>
               <NavLink
                 to="/historia"
