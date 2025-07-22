@@ -9,6 +9,7 @@ import Cotizar from './components/Servicios/Cotizar';
 import Login from './components/Servicios/Login';
 import Register from './components/Servicios/Register';
 import Historia from './components/Servicios/Historia';
+import Garantia from './components/Servicios/Garantia';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/historia" element={<Historia />} />
+        <Route path="/garantia" element={<Garantia />} />
       </Routes>
     </Router>
   );
