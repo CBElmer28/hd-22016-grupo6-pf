@@ -60,7 +60,8 @@ const Navbar = () => {
                 <NavLink
                   to="/servicios"
                   className={({ isActive }) =>
-                    `text-white hover:text-blue-500 no-underline ${isActive ? 'text-blue-500 font-semibold' : ''
+                    `text-white hover:text-blue-500 no-underline ${
+                      isActive ? 'text-blue-500 font-semibold' : ''
                     }`
                   }
                 >
@@ -110,8 +111,6 @@ const Navbar = () => {
               >
                 Boutique
               </NavLink>
-
-
             </div>
           </div>
 
