@@ -10,6 +10,7 @@ import Login from './components/Servicios/Login';
 import Register from './components/Servicios/Register';
 import Historia from './components/Servicios/Historia';
 import Boutique from './components/Servicios/Boutique';
+import Garantia from './components/Servicios/Garantia';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/historia" element={<Historia />} />
         <Route path="/boutique" element={<Boutique />} />
+        <Route path="/garantia" element={<Garantia />} />
       </Routes>
     </Router>
   );
